@@ -8,6 +8,11 @@
     "start": "node --trace-warnings --experimental-modules index.mjs",
     "test": "test"
   },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "mujoco-wasm": "git+https://github.com/zalo/mujoco_wasm.git#4759515e9b945bd8a5d022c3595434eafcf2b3bc",
+    "three": "^0.158.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/Luan-vP/glider-js.git"
