@@ -4,6 +4,7 @@
   "description": "GliderSIM implementation in Javascript",
   "main": "index.js",
   "scripts": {
+    "start": "node index.mjs",
     "test": "test"
   },
   "dependencies": {
