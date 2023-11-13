@@ -1,0 +1,27 @@
+{
+  "name": "glider_js",
+  "version": "1.0.0",
+  "description": "GliderSIM implementation in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "dependencies": {
+    "mujoco_wasm": "git+https://github.com/zalo/mujoco_wasm.git#4759515e9b945bd8a5d022c3595434eafcf2b3bc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Luan-vP/glider-js.git"
+  },
+  "keywords": [
+    "RL",
+    "ML",
+    "AI"
+  ],
+  "author": "Luan van Pletsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luan-vP/glider-js/issues"
+  },
+  "homepage": "https://github.com/Luan-vP/glider-js#readme"
+}
