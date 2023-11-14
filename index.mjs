@@ -10,7 +10,7 @@ const mujoco = await load_mujoco();
 console.log('index.mjs');
 
 export class MuJoCoViewer {
-    constructor(sceneXML) {
+    constructor() {
         this.mujoco = mujoco;
 
         // Load in the state from XML
@@ -28,5 +28,27 @@ export class MuJoCoViewer {
         this.camera.position.set(0, 0, 3);
         this.scene.add(this.camera);
 
+        this.renderer = new THREE.WebGLRenderer();
+        this.renderer.setPixelRatio( window.devicePixelRatio );
+        this.renderer.setSize( window.innerWidth, window.innerHeight );
+        this.renderer.shadowMap.enabled = true;
+        this.renderer.setAnimationLoop( this.render.bind(this) );
+
+        this.container.appendChild( this.renderer.domElement );
+
+        this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+        this.controls.target.set(0, 0.7, 0);
+        this.controls.panSpeed = 2;
+        this.controls.zoomSpeed = 1;
+        this.controls.enableDamping = true;
+        this.controls.dampingFactor = 0.10;
+        this.controls.screenSpacePanning = true;
+        this.controls.update();
+
+        window.addEventListener('resize', this.onWindowResize.bind(this));
+
+        this.dragStateManager = new DragStateManager(this.scene, this.renderer, this.camera, this.container.parentElement, this.controls);
     }
+
+    
 }
